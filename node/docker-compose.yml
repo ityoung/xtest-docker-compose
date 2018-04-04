@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  node:
+    build: .
+    volumes:
+      - xtest-front:/www/xtest-web/dist
+
+volumes:
+  xtest-front:

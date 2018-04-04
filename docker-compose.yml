@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "8099:8099"
+      - "8009:8009"
+    volumes:
+      - xtest-front:/www/xtest-web/dist
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  mongo:
+    build:
+      context: mongo
+      dockerfile: Dockerfile-mongo
+    volumes:
+      - xtest-data:/data/db
+    expose:
+      - "27017"
+    # uncommand to able host visit mongo
+    #ports:
+    #  - "27017:27017"
+    command: ./start_mongo.sh
+
+volumes:
+  xtest-front:
+  xtest-data:

@@ -1,0 +1,9 @@
+FROM node:9
+
+# front-end
+
+RUN mkdir /www && cd /www && git clone https://github.com/x-utest/xtest-web.git
+COPY config.js /www/xtest-web/src/config.js
+COPY build.sh build.sh
+
+CMD ["./build.sh"]
