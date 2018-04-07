@@ -8,14 +8,6 @@ services:
     volumes:
       - xtest-data:/data/db
     command: ./init_mongo.sh
-  node:
-    build:
-      context: node
-      dockerfile: Dockerfile-node
-    volumes:
-      - xtest-front:/www/xtest-web/dist
-  # TODO: init ip
 
 volumes:
   xtest-data:
-  xtest-front:

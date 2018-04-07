@@ -1,4 +1,4 @@
-var apiHost = 'http://192.168.3.158:8009/';
+var apiHost = 'http://127.0.0.1:8009/';
 module.exports = {
     apiHost
 }

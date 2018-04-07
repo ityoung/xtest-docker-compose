@@ -1,13 +1,6 @@
 version: "3"
 
 services:
-  mongo:
-    build:
-      context: mongo
-      dockerfile: Dockerfile-mongo
-    volumes:
-      - xtest-data:/data/db
-    command: ./init_mongo.sh
   node:
     build:
       context: node
@@ -16,5 +9,4 @@ services:
       - xtest-front:/www/xtest-web/dist
 
 volumes:
-  xtest-data:
   xtest-front:

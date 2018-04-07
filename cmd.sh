@@ -12,7 +12,7 @@ function checkEnv(){
 # 1: init mongo
 function initMongo(){
     echo "正在初始化MongoDB, 若失败或不小心退出请重试该步骤..."
-    docker-compose -f init_mongo.yml up
+    sudo docker-compose -f init_mongo.yml up
     echo "始化MongoDB完成!"
 }
 
@@ -47,13 +47,13 @@ function setConfigJS(){
 
 function buildWeb(){
     echo "正在编译前端代码..."
-    docker-compose -f build_web.yml up
+    sudo docker-compose -f build_web.yml up
 }
 
 function start(){
     echo "正在启动 x-utest 测试平台..."
     echo "启动完成后, 浏览器输入 IP:8099 访问."
-    docker-compose up
+    sudo docker-compose up
 }
 
 function main(){
