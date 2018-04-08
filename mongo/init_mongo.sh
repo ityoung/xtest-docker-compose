@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mongod -f mongodb.conf
+mongod -f mongo-fork.conf
 
 sleep 5
 

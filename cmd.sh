@@ -94,6 +94,7 @@ function main(){
             exit 1
             ;;
     esac
+    sleep 3;
 }
 
 checkEnv
