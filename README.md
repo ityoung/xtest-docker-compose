@@ -1,5 +1,7 @@
 # x-utest 测试平台的 docker-compose 项目
 
+x-utest 官方文档参见: http://xtest.readthedocs.io/zh/latest/src/local_install.html
+
 ## 前提：
 
 一台装有如下环境/工具的宿主机:
