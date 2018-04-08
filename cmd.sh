@@ -47,6 +47,7 @@ function setConfigJS(){
 
 function buildWeb(){
     echo "正在编译前端代码..."
+    sudo docker-compose -f build_web.yml build --no-cache
     sudo docker-compose -f build_web.yml up
 }
 
@@ -60,7 +61,7 @@ function main(){
     clear
     echo "输入对应数字选择你需要的操作:"
     echo " 1.初始化 MongoDB  2.编译前端代码  3.启动 x-utest  0.退出"
-    echo "注意: 完成步骤 3 前, 请先完成步骤 1, 2"
+    echo "注意: 执行步骤 3 前, 请先完成步骤 1, 2"
     read select1
     case "$select1" in
         1)
