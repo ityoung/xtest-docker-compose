@@ -18,7 +18,7 @@ function initMongo(){
 
 # 2: init node
 function getIP(){
-    ip=`cat config.js |grep -o -P "(\d+\.)(\d+\.)(\d+\.)\d+"`
+    ip=`cat node/config.js |grep -o -P "(\d+\.)(\d+\.)(\d+\.)\d+"`
     echo $ip
 }
 
@@ -41,7 +41,7 @@ function setIP(){
 function setConfigJS(){
     echo "IP 已修改为: (此处 IP 显示正确才可编译!)"
     a="var apiHost = 'http://$1:8009/';"
-    sed -i "1c $a" config.js
+    sed -i "1c $a" node/config.js
     getIP
 }
 

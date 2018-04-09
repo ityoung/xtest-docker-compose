@@ -1,32 +1,32 @@
 @startuml
 start
 if (docker-compose installed?) then (yes)
-repeat
-:print selection;
-fork
-:init mongo;
-:docker compose -f
-init_mongo.yml up;
-forkagain
-:build web;
-:print now ip;
-if (need change ip?) then (yes)
-:enter ip;
-endif
-:change config.js;
-if (start build?) then (yes)
-:docker compose -f
-build_web.yml up;
+    repeat
+        :print selection;
+        fork
+            :init mongo;
+            :docker compose -f
+            init_mongo.yml up;
+        forkagain
+            :build web;
+            :print now ip;
+            if (need change ip?) then (yes)
+                :enter ip;
+            endif
+                :change config.js;
+            if (start build?) then (yes)
+                :docker compose -f
+                build_web.yml up;
+            else (no)
+                stop
+            endif
+        forkagain
+            :run xtest;
+        endfork
+    repeat while(exit?) is (no)
+        end
 else (no)
-stop
-endif
-forkagain
-:run xtest;
-endfork
-repeat while(exit?) is (no)
-end
-else (no)
-:print "Install first!";
-stop
+    :print "Install first!";
+    stop
 endif
 @enduml
