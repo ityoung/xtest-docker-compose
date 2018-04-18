@@ -2,9 +2,10 @@ version: "3"
 
 services:
   backend:
-    build:
-      context: backend
-      dockerfile: Dockerfile-backend
+    #build:
+    #  context: backend
+    #  dockerfile: Dockerfile-backend
+    image: "ityoung/xtest:latest"
     ports:
       - "8099:8099"
       - "8009:8009"
