@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mongod -f mongodb.conf
+mongod -f mongodb.conf --bind_ip_all
