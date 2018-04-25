@@ -57,10 +57,26 @@ function start(){
     sudo docker-compose up
 }
 
+function update(){
+    echo "是否拉取最新代码并重新编译 ? [y/n]"
+    read ans
+    if [ "$ans"x = "y"x ] || [ "$ans"x = "Y"x ]; then
+        echo "正在更新..."
+        sudo docker-compose build --no-cache
+        sudo docker pull ityoung/xtest:latest
+    elif [ "$ans"x = "n"x ] || [ "$ans"x = "N"x ]; then
+        echo "未进行更新"
+        return 0
+    else
+        echo "输入有误"
+        return 1
+    fi
+}
+
 function main(){
     clear
     echo "输入对应数字选择你需要的操作:"
-    echo " 1.初始化 MongoDB  2.编译前端代码  3.启动 x-utest  0.退出"
+    echo " 1.初始化 MongoDB  2.编译前端代码  3.启动 x-utest  4.更新代码与Docker镜像  0.退出"
     echo "注意: 执行步骤 3 前, 请先完成步骤 1, 2"
     read select1
     case "$select1" in
@@ -89,6 +105,9 @@ function main(){
             ;;
         3)
             start
+            ;;
+        4)
+            update
             ;;
         *)
             echo "exit"
