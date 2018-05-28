@@ -36,6 +36,12 @@ git clone https://github.com/ityoung/xtest-docker-compose.git
 
 **本节意在解决国内网络下载docker镜像慢的问题, 若不存在该问题请忽略本节!**
 
+### (推荐)方法1：
+
+参考：[Docker 中国官方镜像加速](https://www.docker-cn.com/registry-mirror)
+
+### 方法2：
+
 1. 注册国内docker镜像托管网站: daocloud.io
 
 2. 登录后, 点击 **加速器** 按钮(火箭图标), 或访问: https://www.daocloud.io/mirror#accelerator-doc, 查看配置教程
