@@ -64,6 +64,7 @@ function update(){
         echo "正在更新..."
         sudo docker-compose build --no-cache
         sudo docker pull ityoung/xtest:latest
+        sudo docker pull ityoung/xtest-node:latest
     elif [ "$ans"x = "n"x ] || [ "$ans"x = "N"x ]; then
         echo "未进行更新"
         return 0
